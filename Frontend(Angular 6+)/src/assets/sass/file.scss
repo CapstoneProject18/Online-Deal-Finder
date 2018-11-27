@@ -1,0 +1,57 @@
+/*!
+
+ =========================================================
+ * Online Deal Finder
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/now-ui-kit-angular
+ * Copyright 2017 Creative Tim (https://www.creative-tim.com)
+ * Licensed under MIT (https://github.com/creativetimofficial/files/blob/master/LICENSE.md)
+
+ * Designed by www.invisionapp.com Coded by www.creative-tim.com
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ */
+
+@import 'files/variables';
+@import 'files/mixins';
+
+// Plugins CSS
+@import "files/plugins/plugin-bootstrap-switch";
+@import "files/plugins/plugin-nouislider";
+@import "files/plugins/plugin-datepicker";
+
+// Core CSS
+@import "files/buttons";
+@import "files/inputs";
+@import "files/checkboxes-radio";
+@import "files/progress";
+@import "files/badges";
+@import "files/pagination";
+@import "files/typography";
+@import "files/misc";
+@import "files/pills";
+
+// components
+@import "files/social-buttons";
+@import "files/tabs";
+@import "files/navbar";
+@import "files/dropdown";
+@import "files/alerts";
+@import "files/images";
+@import "files/popups";
+@import "files/nucleo-outline";
+@import "files/modals";
+@import "files/carousel";
+@import "files/cards";
+@import "files/footers";
+
+// example pages and sections
+@import "files/example-pages";
+@import "files/sections";
+
+
+@import "files/responsive";
