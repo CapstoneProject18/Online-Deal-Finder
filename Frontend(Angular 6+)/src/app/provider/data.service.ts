@@ -9,7 +9,6 @@ export class DataService {
   res:any;
   baseUrl = 'http://localhost:8080/users/';
   
-  
   getLoginDetailsUsingUnameOrEmail(email)
   {
     let url = this.baseUrl+"login/"+email;
@@ -25,5 +24,7 @@ export class DataService {
     console.log(this.http.post(url, user));
     return this.http.post(url, user);
   }
+
+
 
 }

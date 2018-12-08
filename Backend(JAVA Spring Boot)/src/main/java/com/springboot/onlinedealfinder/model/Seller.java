@@ -1,27 +1,26 @@
 package com.springboot.onlinedealfinder.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.*;
+import com.springboot.onlinedealfinder.*;
 
 @Entity
-@Table(name = "seller")
 public class Seller {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="sellerId")
     private long sellerId;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "email")
     private String email;
 
-    @Column(name = "pass")
     private String pass;
 
-    @Column(name = "img_url")
     private String imgUrl;
 
+    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Product> products = new HashSet<>();
 
     public Seller() {
     }
@@ -76,5 +75,15 @@ public class Seller {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public void addProduct(Product product) {
+        products.add(product);
+        product.setSeller(this);
+    }
+
+    public void removeProduct(Product product) {
+        products.remove(product);
+        product.setSeller(null);
     }
 }

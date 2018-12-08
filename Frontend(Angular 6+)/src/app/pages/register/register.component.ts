@@ -9,9 +9,7 @@ import { DataService } from '../../provider/data.service';
 })
 export class RegisterComponent implements OnInit {
   user:{
-    fname:string,
-    lname:string,
-    uname:string,
+    name:string,
     email:string,
     pass:string,
     imgUrl:string
@@ -24,9 +22,7 @@ export class RegisterComponent implements OnInit {
 
   createFormGroup() {
     return new FormGroup({
-        fname: new FormControl(),
-        lname:new FormControl(),
-        uname:new FormControl(),
+        name:new FormControl(),
         email:new FormControl(),
         pass:new FormControl(),
         imgUrl:new FormControl()
@@ -38,14 +34,15 @@ export class RegisterComponent implements OnInit {
   {
     
     this.user = this.registerForm.value;
-    console.log(this.registerForm.value.fname);
     this.data.registerUser(this.user)
     .subscribe(
       result => {
         console.log(result);
+        alert("Registered!");
       },
       error=>{
-        console.error()
+        console.error();
+        alert("Error!");
       }
     );
   }

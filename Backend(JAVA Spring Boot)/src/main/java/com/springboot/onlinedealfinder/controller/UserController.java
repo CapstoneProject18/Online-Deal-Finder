@@ -39,6 +39,4 @@ public class UserController {
 
         return buyerRepository.save(new Buyer(name, email, pass, imgUrl));
     }
-
-
 }

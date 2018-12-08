@@ -3,24 +3,18 @@ package com.springboot.onlinedealfinder.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "buyer")
 public class Buyer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="buyerId")
     private long buyerId;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "email")
     private String email;
 
-    @Column(name = "pass")
     private String pass;
 
-    @Column(name = "img_url")
     private String imgUrl;
 
 
@@ -35,7 +29,7 @@ public class Buyer {
         this.imgUrl = imgUrl;
     }
 
-    public void setBuyerId( long sellerId)
+    public void setBuyerId(long sellerId)
     {
         this.buyerId = sellerId;
     }

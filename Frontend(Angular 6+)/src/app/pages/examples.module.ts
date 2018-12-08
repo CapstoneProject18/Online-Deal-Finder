@@ -19,15 +19,13 @@ import { RegisterComponent } from '../pages/register/register.component';
         NgbModule,
         NouisliderModule,
         JWBootstrapSwitchModule,
-        AgmCoreModule.forRoot({
-            apiKey: 'YOUR_KEY_HERE'
-        })
+    
     ],
     declarations: [
         LandingComponent,
         LoginComponent,
         ExamplesComponent,
-        RegisterComponent
+        RegisterComponent,
     ]
 })
 export class ExamplesModule { }
