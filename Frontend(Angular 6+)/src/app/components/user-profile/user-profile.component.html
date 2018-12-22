@@ -1,0 +1,100 @@
+<div class="wrapper">
+  <div class="page-header page-header-small" filter-color="orange">
+      <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg5.jpg') ;">
+      </div>
+  </div>
+  <div class="section">
+
+      <div class="content-center">
+          <div class="photo-container">
+              <img src="assets/img/anmol.jpg" alt="">
+          </div>
+          <h3 class="title">Anmol Singh</h3>
+          <p class="category">+91-xxxxxxxxxx</p>
+          <div class="content">
+              <div class="col-sm-4 social-description">
+                  <h2>Email</h2>
+                  <p>anmol.singh@st.niituniversity.in</p>
+              </div>
+          </div>
+      </div>
+  </div>
+    <div class="section">
+      <div class="container">
+        <div class="button-container">
+            <button class="btn btn-primary btn-round btn-lg" (click)="open(classic)">Your Seller Profile</button>
+            <ng-template #classic let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center">Seller Profile</h5>
+                        <button type="button" class="close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="../../../assets/img/avatar.jpg">
+                            </div>
+
+                            <div class="col-sm-8">
+                                doasndjkasndjk
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="left-side">
+                            <button type="button" class="btn btn-default btn-link" (click)="c('Close click')">Never mind</button>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="right-side">
+                            <button type="button" class="btn btn-danger btn-link" (click)="c('Close click')">Delete</button>
+                        </div>
+                    </div>
+                   </ng-template>
+            <button (click)="navigate('orders')" class="btn btn-primary btn-round btn-lg">Your Orders</button>
+            <button (click)="open(item)" class="btn btn-primary btn-round btn-lg">Add New Item</button>
+            <ng-template #item let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center">New Item</h5>
+                        <button type="button" class="close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <label class="image-upload-container btn btn-bwm">
+                                    <span>Select Image</span>
+                                    <input class="form-control" (change)="selectFile($event)" type="file" name="selectFile" accept="image/*">
+                                </label>
+                            </div>
+
+                            <div class="col-sm-7">
+                                <form class="form">
+                                    <div class="content">
+                                        <div class="input-group form-group-no-border input-lg">
+                                            <input type="text" placeholder="Product Name..." class="form-control" />
+                                        </div>
+                                    
+                                        <div class="input-group form-group-no-border input-lg">
+                                            <input type="text" placeholder="Product Price..." class="form-control" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="left-side">
+                            <button type="button" class="btn btn-default btn-link" (click)="c('Close click')">Never mind</button>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="right-side">
+                            <button type="button" class="btn btn-danger btn-link" (click)="c('Close click')">Delete</button>
+                        </div>
+                    </div>
+                   </ng-template>
+        </div>  
+      </div>
+  </div>
+</div>
