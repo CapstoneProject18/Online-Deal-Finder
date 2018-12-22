@@ -1,6 +1,7 @@
 package com.springboot.onlinedealfinder.controller;
 
 
+import com.springboot.onlinedealfinder.Service.AmazonClient;
 import com.springboot.onlinedealfinder.model.Buyer;
 import com.springboot.onlinedealfinder.model.Product;
 import com.springboot.onlinedealfinder.model.Seller;
@@ -8,6 +9,7 @@ import com.springboot.onlinedealfinder.repository.BuyerRepository;
 import com.springboot.onlinedealfinder.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Map;
 
@@ -16,6 +18,9 @@ import java.util.Map;
 public class ProductController {
     @Autowired(required = true)
     private ProductRepository productRepository;
+
+    @Autowired
+    private AmazonClient amazonClient;
 
     @GetMapping(value="/allProducts")
     @CrossOrigin(origins = "http://localhost:4200")
@@ -31,6 +36,13 @@ public class ProductController {
         return productRepository.findByProductName(productName);
     }
 
+
+//    @PostMapping(value = "/create")
+//    @CrossOrigin(origins = "http://localhost:4200")
+//    public String createProduct(String productName, String price, String productImage, MultipartFile image
+//    {
+//        return productRepository.save(new Product(productName, price, productImage, Seller));
+//    }
 //
 //    @PostMapping(value = "/create")
 //    @CrossOrigin(origins = "http://localhost:4200")

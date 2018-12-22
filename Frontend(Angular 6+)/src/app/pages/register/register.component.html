@@ -28,12 +28,10 @@
                               </div>
                                 <input type="password" placeholder="Password..." class="form-control" formControlName="pass"/>
                             </div>
-                            <div class="input-group form-group-no-border input-lg">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="now-ui-icons text_caps-small"></i></span>
-                                </div>
-                                  <input type="text" placeholder="Image Url..." class="form-control" formControlName="imgUrl"/>
-                              </div>
+                            <label class="image-upload-container btn btn-bwm">
+                                <span>Select Image</span>
+                                <input class="form-control" (change)="selectFile($event)" type="file" name="selectFile" accept="image/*">
+                            </label>
                     </div>
                     <div class="footer text-center">
                         <a class="btn btn-primary btn-round btn-lg btn-block" (click)= "register()" >Register</a>

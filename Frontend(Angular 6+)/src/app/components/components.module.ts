@@ -6,6 +6,8 @@ import { NouisliderModule } from 'ng2-nouislider';
 import { JWBootstrapSwitchModule } from 'jw-bootstrap-switch-ng2';
 import { RouterModule } from '@angular/router';
 import { ComponentsComponent } from './components.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
     imports: [
@@ -18,6 +20,8 @@ import { ComponentsComponent } from './components.component';
       ],
     declarations: [
         ComponentsComponent,
+        UserProfileComponent,
+        CheckoutComponent,
     ],
     exports:[ ComponentsComponent ]
 })

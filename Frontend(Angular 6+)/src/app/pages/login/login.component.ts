@@ -2,12 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder,Validators, FormGroup, FormControl } from '@angular/forms';
 import { DataService } from '../../provider/data.service';
 import { Router } from '@angular/router';
-import {
-  AuthService,
-  FacebookLoginProvider,
-  GoogleLoginProvider
-} from 'angular-6-social-login';
-
 
 @Component({
   selector: 'app-login',
@@ -23,12 +17,14 @@ export class LoginComponent implements OnInit {
     userData:any;
     loginForm:FormGroup;
 
-    constructor(public data:DataService,
+    
+
+    constructor(
+      public data:DataService,
       private formBuilder: FormBuilder,
-      private router:Router, 
-      private socialAuthService: AuthService,
       private element : ElementRef,
-       ) { }
+      private router:Router
+      ) { }
 
       KEY = 'value';
       value: any = null;
@@ -85,18 +81,9 @@ export class LoginComponent implements OnInit {
           alert("Fail");
       }  
 
-      public socialSignIn(socialPlatform : string) {
-        let socialPlatformProvider;
-        if(socialPlatform == "google"){
-          socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
-        }
-        
-        this.socialAuthService.signIn(socialPlatformProvider).then(
-          (userData) => {
-            console.log(socialPlatform+" sign in data : " , userData);
-            this.router.navigate(['pages/landing']);    
-          }
-        );
-    }
+      public googleLoginAndRegister()
+      {
+        this.data.registerGoogleUser("google");
+      }
       
 }

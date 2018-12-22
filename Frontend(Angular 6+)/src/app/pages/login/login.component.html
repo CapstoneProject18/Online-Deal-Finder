@@ -24,14 +24,17 @@
                       </div>
                     </div>
 
+                    <div class="footer text-center">
+                        <a (click)="login()" class="btn btn-primary btn-lg btn-block">Get Started</a>
+                    </div>
+
                     <div class="social-line">
-                        <button class="btn btn-neutral btn-twitter btn-icon btn-lg btn-round" (click)="socialSignIn('google')">
+                        <h3>Sign In With Google</h3>
+                        <button class="btn btn-neutral btn-google btn-icon btn-lg btn-round" (click)="googleLoginAndRegister()">
                             <i class="fa fa-google"></i>
                         </button>
                     </div>
-                    <div class="footer text-center">
-                        <a (click)="login()" class="btn btn-primary btn-round btn-lg btn-block">Get Started</a>
-                    </div>
+                    
                     <div class="pull-left">
                         <h6>
                             <a href="/pages/register" class="link">Create Account</a>

@@ -1,24 +1,5 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" data-color="orange">
     <div class="container">
-      <div class="dropdown button-dropdown">
-        <div ngbDropdown>
-          <a class="dropdown-toggle" ngbDropdownToggle>
-              <span class="button-bar"></span>
-              <span class="button-bar"></span>
-              <span class="button-bar"></span>
-          </a>
-           <div ngbDropdownMenu>
-             <a class="dropdown-header">Dropdown header</a>
-             <a class="dropdown-item" href="#">Action</a>
-             <a class="dropdown-item" href="#">Another action</a>
-             <a class="dropdown-item" href="#">Something else here</a>
-             <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">Separated link</a>
-             <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">One more separated link</a>
-           </div>
-         </div>
-      </div>
         <div class="navbar-translate">
             <a class="navbar-brand" [routerLink]="['/index']" placement="bottom">
                 Online Deal Finder
@@ -36,20 +17,30 @@
                       <i class="now-ui-icons arrows-1_cloud-download-93"></i>
                       <p>Discover</p>
                   </a>
-              </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/pages/login']">
-                      <i class="now-ui-icons files_paper"></i>
-                      <p>Login</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/pages/register']">
-                        <i class="now-ui-icons files_paper"></i>
-                        <p>Register</p>
-                    </a>
                 </li>
             </ul>
         </div>
+
+        <div class="dropdown button-dropdown">
+            <div ngbDropdown>
+              <a class="dropdown-toggle" ngbDropdownToggle>
+                  <span class="button-bar"></span>
+                  <span class="button-bar"></span>
+                  <span class="button-bar"></span>
+              </a>
+               <div ngbDropdownMenu>
+                 <a class="dropdown-header">Login/Register</a>
+                    <a class="dropdown-item" [routerLink]="['/pages/login']">
+                        <i class="fa fa-sign-in"></i>
+                        <p>Login</p>
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/pages/register']">
+                        <i class="fa fa-user-plus"></i>
+                        <p>Register</p>
+                    </a>
+                </div>
+             </div>
+          </div>
+          
     </div>
 </nav>

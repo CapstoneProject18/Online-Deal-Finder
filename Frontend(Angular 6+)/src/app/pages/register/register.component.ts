@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { DataService } from '../../provider/data.service';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-register',
@@ -8,17 +9,20 @@ import { DataService } from '../../provider/data.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  imgRes:string;
+
   user:{
     name:string,
     email:string,
     pass:string,
     imgUrl:string
   };
-  
+
+  selectedFile: FileList;
   registerForm: FormGroup
-  constructor(public data:DataService) { 
-    
+  constructor(public data:DataService, private elem:ElementRef ) {    
   }
+  
 
   createFormGroup() {
     return new FormGroup({
@@ -32,21 +36,15 @@ export class RegisterComponent implements OnInit {
 
   register()
   {
-    
-    this.user = this.registerForm.value;
-    this.data.registerUser(this.user)
-    .subscribe(
-      result => {
-        console.log(result);
-        alert("Registered!");
-      },
-      error=>{
-        console.error();
-        alert("Error!");
-      }
-    );
+    console.log(this.registerForm);
+    this.data.registerUser(this.registerForm.value, this.selectedFile.item(0))
+      .subscribe(response =>{
+        console.log(response);
+        alert('success');
+      }, error => {
+        console.log("error!!");
+      });
   }
-
   ngOnInit() {
     this.registerForm = this.createFormGroup();
 
@@ -64,4 +62,7 @@ ngOnDestroy(){
     navbar.classList.remove('navbar-transparent');
 }
 
+selectFile(event) {
+  this.selectedFile = event.target.files;
+}
 }

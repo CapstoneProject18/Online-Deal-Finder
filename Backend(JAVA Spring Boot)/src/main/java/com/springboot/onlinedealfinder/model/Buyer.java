@@ -29,9 +29,9 @@ public class Buyer {
         this.imgUrl = imgUrl;
     }
 
-    public void setBuyerId(long sellerId)
+    public void setBuyerId(long buyerId)
     {
-        this.buyerId = sellerId;
+        this.buyerId = buyerId;
     }
 
     public long getBuyerId()

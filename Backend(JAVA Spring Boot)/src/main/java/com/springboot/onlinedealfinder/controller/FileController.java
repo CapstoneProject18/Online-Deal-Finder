@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("/file/")
+@RequestMapping("/image")
 public class FileController {
     private AmazonClient amazonClient;
 
@@ -15,12 +15,14 @@ public class FileController {
         this.amazonClient = amazonClient;
     }
 
-    @PostMapping("/uploadFile")
+    @PostMapping("/uploadImage")
+    @CrossOrigin(origins = "http://localhost:4200")
     public String uploadFile(@RequestPart(value = "file") MultipartFile file) {
-        return this.amazonClient.uploadFile(file);
+        return this.amazonClient.uploadFileTos3bucket(file);
     }
 
     @DeleteMapping("/deleteFile")
+    @CrossOrigin(origins = "http://localhost:4200")
     public String deleteFile(@RequestPart(value = "url") String fileUrl) {
         return this.amazonClient.deleteFileFromS3Bucket(fileUrl);
     }
